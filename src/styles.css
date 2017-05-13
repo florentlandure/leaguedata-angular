@@ -1,1 +1,51 @@
 /* You can add global styles to this file, and also import other style files */
+
+html {
+  font-size: 18px;
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial;
+  padding-top: 55px;
+  color: #333;
+  background: #eee;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  word-wrap: break-word;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Bitter', Georgia, serif;
+  padding-bottom: 1rem;
+}
+.container {
+  width: 100%;
+  max-width: 67rem;
+  padding: 0 2rem;
+  margin: auto;
+}
+.logo-data {
+  color: #34cadb;
+}

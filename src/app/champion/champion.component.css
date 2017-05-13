@@ -1,0 +1,160 @@
+/*.champion{
+    background: #fafafa;
+}*/
+
+.champion-header {
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  color: #eee;
+  text-shadow: 1px 1px 2px black;
+}
+.champion-header>img {
+  width: 100%;
+  transform: translateY(-10%);
+}
+.champion-name,
+.champion-title {
+  position: absolute;
+  left: 1rem;
+}
+.champion-title {
+  bottom: 0.5rem;
+  text-transform: capitalize;
+  font-style: italic;
+}
+.champion-name {
+  bottom: 0.8rem;
+}
+.champion-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.champion-info-category {
+  margin-bottom: 1rem;
+}
+.champion-info-category h2 {
+  padding: 10px 1rem;
+  margin-bottom: 1rem;
+  color: #eee;
+  background: #333;
+  border: 4px double #777;
+}
+.info-body {
+  padding: 0 2rem;
+}
+#stats,
+#overview {
+  flex: 1;
+}
+#stats {
+  margin-right: 5px;
+}
+#overview {
+  margin-left: 5px;
+}
+#skills,
+#skins,
+#lore {
+  width: 100%;
+}
+
+/* STATS */
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.stats>p {
+  width: 50%;
+  padding: 5px 0;
+}
+.stats .flat {
+  color: green;
+  font-weight: bold;
+}
+.stats .perlevel {
+  color: #777;
+  font-style: italic;
+}
+
+/* OVERVIEW */
+
+.overview-info {
+  margin-top: 1.5rem;
+}
+.info {
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+.progress {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  flex: 3;
+}
+.info>span {
+  flex: 1;
+}
+.progress::-webkit-progress-bar {
+  background-color: #ccc;
+}
+#attack::-webkit-progress-value {
+  background-color: #d12323;
+}
+#magic::-webkit-progress-value {
+  background-color: #2375ce;
+}
+#toughness::-webkit-progress-value {
+  background-color: #6f14ba;
+}
+
+/* SKILLS */
+
+.skill {
+  padding: 1rem 0;
+}
+.skill:not(:last-child) {
+  border-bottom: 1px solid #ccc;
+}
+.skill-head {
+  display: flex;
+  margin-bottom: 2rem;
+}
+.skill-head>div>p {
+  display: inline-block;
+  margin-right: 1rem;
+}
+.skill img {
+  margin-top: 6px;
+  margin-right: 1rem;
+  width: 64px;
+  height: 64px;
+}
+
+/* SKINS */
+
+.skins {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+.skin {
+  width: 25%;
+  padding: 0.5rem;
+}
+.skin img {
+  width: 100%;
+}
+
+/* LORE */
+
+.lore {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}

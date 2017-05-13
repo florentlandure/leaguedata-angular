@@ -1,0 +1,36 @@
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #222;
+  color: #eee;
+  z-index: 9999;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+.navigation a:not(.menu-link) {
+  text-decoration: none;
+  color: inherit;
+}
+.menu-bar,
+.menu-categories {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu-header {
+  padding: 0;
+}
+.menu-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  margin: 0 1rem;
+  padding: 15px 0;
+  border-bottom: 4px solid transparent;
+  transition: border 0.4s;
+}
+.menu-link:hover,
+.menu-link.active {
+  border-color: #34cadb;
+}

@@ -1,0 +1,65 @@
+.all-champions {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+.champion-card-wrap {
+  cursor: pointer;
+  width: 25%;
+  padding: 10px;
+}
+.champion-card {
+  border: 2px solid white;
+  background: #fafafa;
+  padding: 1rem 5px;
+  text-align: center;
+  height: 100%;
+}
+.champion-card-wrap:hover>.champion-card {
+  animation: flipX 0.5s;
+  border-color: #333;
+}
+.champion-title {
+  text-transform: capitalize;
+}
+.champion-icon {
+  width: 90px;
+  border-radius: 50%;
+  border: 2px solid #555;
+}
+
+/* ANIMATIONS modification of animate.css flip*/
+
+@keyframes flipX {
+  from {
+    -webkit-transform: perspective(800px) rotateY(-360deg);
+    transform: perspective(800px) rotateY(-360deg);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  40% {
+    -webkit-transform: perspective(800px) translateZ(150px) rotateY(-190deg);
+    transform: perspective(800px) translateZ(150px) rotateY(-190deg);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+  50% {
+    -webkit-transform: perspective(800px) translateZ(150px) rotateY(-170deg);
+    transform: perspective(800px) translateZ(150px) rotateY(-170deg);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  80% {
+    -webkit-transform: perspective(800px) scale3d(.95, .95, .95);
+    transform: perspective(800px) scale3d(.95, .95, .95);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+  to {
+    -webkit-transform: perspective(800px);
+    transform: perspective(800px);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+}
