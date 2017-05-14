@@ -12,6 +12,9 @@ import { HomeComponent } from './home/home.component';
 import { ChampionsComponent } from './champions/champions.component';
 import { ChampionComponent } from './champion/champion.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { SpinnerComponent } from './spinner/spinner.component';
+import { ItemsComponent } from './items/items.component';
+import { ItemComponent } from './item/item.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { NotFoundComponent } from './not-found/not-found.component';
     HomeComponent,
     ChampionsComponent,
     ChampionComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    SpinnerComponent,
+    ItemsComponent,
+    ItemComponent
   ],
   imports: [
     AppRoutingModule,

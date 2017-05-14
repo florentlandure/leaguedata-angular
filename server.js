@@ -2,6 +2,11 @@ const express = require('express');
 const app = express();
 const request = require('request');
 const apiKey = 'RGAPI-ad4193b2-3bd8-4de9-a9c8-c397f91b6fa7';
+const initDB = require('./server/init-db');
+
+//Initialise or update the database everyday
+initDB();
+let initDB_loop = setInterval(initDB, 3600000);
 
 //App settings
 app.set('port', (process.env.PORT || 3000));

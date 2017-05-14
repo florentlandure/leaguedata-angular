@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ChampionsService } from './../champions.service';
 
 import { Champion } from './../champion';
+import { SpinnerComponent } from './../spinner/spinner.component';
 
 @Component({
   selector: 'app-champions',
@@ -10,14 +11,18 @@ import { Champion } from './../champion';
 })
 export class ChampionsComponent implements OnInit {
 
-  champions: Champion[] = [];
+  champions: Champion[];
+  loading: boolean;
 
-  constructor(private championService: ChampionsService) { }
+  constructor(private championService: ChampionsService) {
+    this.champions = [];
+    this.loading = true;
+  }
 
   getChampions(): void {
     this.championService
         .getChampions()
-        .then(champs => {
+        .subscribe(champs => {
           const keys = Object.keys(champs);
           keys.forEach(k => {
             this.champions.push(champs[k]);
@@ -31,6 +36,7 @@ export class ChampionsComponent implements OnInit {
             }
             return 0;
           });
+          this.loading = false;
         });
   }
 

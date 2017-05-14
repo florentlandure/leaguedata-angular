@@ -1,5 +1,6 @@
 <div class="container">
   <div class="all-champions">
+    <app-spinner *ngIf="loading"></app-spinner>
     <div *ngFor="let champ of champions" class="champion-card-wrap">
       <div class="champion-card">
         <img class="champion-icon" src="https://ddragon.leagueoflegends.com/cdn/7.9.2/img/champion/{{champ.key}}.png" alt="Icon of {{champ.name}}">
