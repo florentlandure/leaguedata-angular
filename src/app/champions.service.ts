@@ -10,7 +10,7 @@ import { Champion } from './champion';
 export class ChampionsService {
   apiKey = 'RGAPI-ad4193b2-3bd8-4de9-a9c8-c397f91b6fa7';
   championsUrl: string = 'https://global.api.pvp.net/api/lol/static-data/euw/v1.2/champion?champData=all&api_key=' + this.apiKey;
-
+  championUrl: string = '' + this.apiKey;
   champions;
 
   constructor(private http: Http) {}
@@ -18,9 +18,9 @@ export class ChampionsService {
   getChampions(){
     if(!this.champions) {
       this.champions = this.http.get(this.championsUrl)
-                    .map(res => res.json().data as Champion[])
-                    .publishReplay(1)
-                    .refCount();
+                                .map(res => res.json().data as Champion[])
+                                .publishReplay(1)
+                                .refCount();
     }
     return this.champions;
   }
