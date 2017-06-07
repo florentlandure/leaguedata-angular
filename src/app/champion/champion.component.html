@@ -1,23 +1,23 @@
 <div class="container">
   <div class="champion">
     <header class="champion-header"><img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg" alt="Aatrox splash art">
-      <h1 class="champion-name">Aatrox</h1>
-      <p class="champion-title">the Darkin Blade</p>
+      <h1 class="champion-name">{{champion.name}}</h1>
+      <p class="champion-title">{{champion.title}}</p>
     </header>
     <div class="champion-info">
       <div class="champion-info-category" id="stats">
         <h2>Stats</h2>
         <div class="stats info-body">
-          <p><b>Health :</b><br><span class="flat">537.8</span><span class="perlevel"> (+85)</span></p>
-          <p><b>Armor :</b><br><span class="flat">24.384</span><span class="perlevel"> (+3.8)</span></p>
-          <p><b>Health regen :</b><br><span class="flat">6.59</span><span class="perlevel"> (+0.5)</span></p>
-          <p><b>Magic resist :</b><br><span class="flat">32.1</span><span class="perlevel"> (+1.25)</span></p>
-          <p><b>Mana :</b><br><span class="flat">105.6</span><span class="perlevel"> (+45)</span></p>
-          <p><b>Attack :</b><br><span class="flat">60.376</span><span class="perlevel"> (+3.2)</span></p>
-          <p><b>Mana regen :</b><br><span class="flat">0</span><span class="perlevel"> (+0)</span></p>
-          <p><b>Range :</b><br><span class="flat">150</span></p>
-          <p><b>Move speed :</b><br><span class="flat">345</span></p>
-          <p><b>Attack speed :</b><br><span class="flat">0.651</span><span class="perlevel"> (+3)</span></p>
+          <p><b>Health :</b><br><span class="flat">{{champion.stats.hp}}</span><span class="perlevel"> (+{{champion.stats.hpperlevel}})</span></p>
+          <p><b>Armor :</b><br><span class="flat">{{champion.stats.armor}}</span><span class="perlevel"> (+{{champion.stats.armorperlevel}})</span></p>
+          <p><b>Health regen :</b><br><span class="flat">{{champion.stats.hpregen}}</span><span class="perlevel"> (+{{champion.stats.hpregenperlevel}})</span></p>
+          <p><b>Magic resist :</b><br><span class="flat">{{champion.stats.spellblock}}</span><span class="perlevel"> (+{{champion.stats.spellblockperlevel}})</span></p>
+          <p><b>Mana :</b><br><span class="flat">{{champion.stats.mp}}</span><span class="perlevel"> (+{{champion.stats.mpperlevel}})</span></p>
+          <p><b>Attack :</b><br><span class="flat">{{champion.stats.attackdamage}}</span><span class="perlevel"> (+{{champion.stats.attackdamageperlevel}})</span></p>
+          <p><b>Mana regen :</b><br><span class="flat">{{champion.stats.mpregen}}</span><span class="perlevel"> (+{{champion.stats.mpregenperlevel}})</span></p>
+          <p><b>Range :</b><br><span class="flat">{{champion.stats.attackrange}}</span></p>
+          <p><b>Move speed :</b><br><span class="flat">{{champion.stats.movespeed}}</span></p>
+          <p><b>Attack speed :</b><br><span class="flat">{{(0.625 / (1 + champion.stats.attackspeedoffset)).toFixed(3)}}</span><span class="perlevel"> (+{{champion.stats.attackspeedperlevel}})</span></p>
         </div>
       </div>
       <div class="champion-info-category" id="overview">

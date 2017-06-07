@@ -8,6 +8,7 @@ import { Router, Params, ActivatedRoute } from '@angular/router';
 })
 export class ChampionComponent implements OnInit {
   championId: number;
+  champion;
   constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {

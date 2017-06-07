@@ -16,6 +16,7 @@ export class ChampionsService {
   constructor(private http: Http) {}
 
   getChampions(){
+    // To be modified
     if(!this.champions) {
       this.champions = this.http.get(this.championsUrl)
                                 .map(res => res.json().data as Champion[])
@@ -25,4 +26,7 @@ export class ChampionsService {
     return this.champions;
   }
 
+  getChampionById(id: number) {
+    // To be modified
+  }
 }
