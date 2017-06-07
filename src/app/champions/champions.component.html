@@ -2,7 +2,7 @@
   <div class="all-champions">
     <app-spinner *ngIf="loading"></app-spinner>
     <div *ngFor="let champ of champions" class="champion-card-wrap">
-      <div class="champion-card">
+      <div class="champion-card" (click)="championInfo(champ.id)">
         <img class="champion-icon" src="https://ddragon.leagueoflegends.com/cdn/7.9.2/img/champion/{{champ.key}}.png" alt="Icon of {{champ.name}}">
         <h2 class="champion-name">{{champ.name}}</h2>
         <p class="champion-title">{{champ.title}}</p>

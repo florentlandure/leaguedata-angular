@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ChampionsService } from './../champions.service';
 
 import { Champion } from './../champion';
@@ -13,10 +14,16 @@ export class ChampionsComponent implements OnInit {
 
   champions: Champion[];
   loading: boolean;
+  chpRouter: Router;
 
-  constructor(private championService: ChampionsService) {
+  constructor(private championService: ChampionsService, private router: Router) {
     this.champions = [];
     this.loading = true;
+    this.chpRouter = this.router;
+  }
+
+  championInfo(id: number) {
+    this.chpRouter.navigate(['/champion/' + id]);
   }
 
   getChampions(): void {
