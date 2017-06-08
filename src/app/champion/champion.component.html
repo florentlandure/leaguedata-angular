@@ -1,6 +1,6 @@
 <div class="container">
-  <div class="champion">
-    <header class="champion-header"><img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg" alt="Aatrox splash art">
+  <div class="champion" *ngIf="!!champion">
+    <header class="champion-header"><img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{champion.key}}_0.jpg" alt="{{champion.key}} splash art">
       <h1 class="champion-name">{{champion.name}}</h1>
       <p class="champion-title">{{champion.title}}</p>
     </header>

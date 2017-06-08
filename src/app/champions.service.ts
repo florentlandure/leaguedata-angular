@@ -8,9 +8,7 @@ import { Champion } from './champion';
 
 @Injectable()
 export class ChampionsService {
-  apiKey = 'RGAPI-ad4193b2-3bd8-4de9-a9c8-c397f91b6fa7';
-  championsUrl: string = 'https://global.api.pvp.net/api/lol/static-data/euw/v1.2/champion?champData=all&api_key=' + this.apiKey;
-  championUrl: string = '' + this.apiKey;
+  host: string = 'http://localhost:3000';
   champions;
 
   constructor(private http: Http) {}
@@ -18,8 +16,9 @@ export class ChampionsService {
   getChampions(){
     // To be modified
     if(!this.champions) {
-      this.champions = this.http.get(this.championsUrl)
-                                .map(res => res.json().data as Champion[])
+      const url = `${this.host}/api/champions`;
+      this.champions = this.http.get(url)
+                                .map(res => res.json() as Champion[])
                                 .publishReplay(1)
                                 .refCount();
     }
@@ -27,6 +26,8 @@ export class ChampionsService {
   }
 
   getChampionById(id: number) {
-    // To be modified
+    const url = `${this.host}/api/champion/${id}`;
+    return this.http.get(url)
+                    .map(res => res.json() as Champion[]);
   }
 }

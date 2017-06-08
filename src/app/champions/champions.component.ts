@@ -30,19 +30,7 @@ export class ChampionsComponent implements OnInit {
     this.championService
         .getChampions()
         .subscribe(champs => {
-          const keys = Object.keys(champs);
-          keys.forEach(k => {
-            this.champions.push(champs[k]);
-          });
-          this.champions.sort((a, b) => {
-            if(a.key.toLowerCase() < b.key.toLowerCase()) {
-              return -1;
-            }
-            if(a.key.toLowerCase() > b.key.toLowerCase()) {
-              return 1;
-            }
-            return 0;
-          });
+          this.champions = champs;
           this.loading = false;
         });
   }
