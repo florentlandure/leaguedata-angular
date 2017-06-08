@@ -21,6 +21,7 @@ export class ChampionComponent implements OnInit {
     this.championsService.getChampionById(id)
                          .subscribe(champ => {
                            this.champion = champ;
+                           console.log(champ);
                          });
   }
 }

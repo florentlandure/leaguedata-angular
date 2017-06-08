@@ -22,20 +22,19 @@
       </div>
       <div class="champion-info-category" id="overview">
         <h2>Overview</h2>
-        <p class="info-body"><b>Category :</b> Fighter,Tank
-        </p>
+        <p class="info-body"><b>Category :</b> {{champion.tags}}</p>
         <div class="overview-info info-body">
           <div class="info"><span><b>Attack</b></span>
-            <progress class="progress" id="attack" value="8" max="10"></progress>
+            <progress class="progress" id="attack" [value]="champion.info.attack" max="10"></progress>
           </div>
           <div class="info"><span><b>Magic</b></span>
-            <progress class="progress" id="magic" value="3" max="10"></progress>
+            <progress class="progress" id="magic" [value]="champion.info.magic" max="10"></progress>
           </div>
           <div class="info"><span><b>Defense</b></span>
-            <progress class="progress" id="defense" value="4" max="10"></progress>
+            <progress class="progress" id="defense" [value]="champion.info.defense" max="10"></progress>
           </div>
           <div class="info"><span><b>Toughness</b></span>
-            <progress class="progress" id="toughness" value="4" max="10"></progress>
+            <progress class="progress" id="toughness" [value]="champion.info.difficulty" max="10"></progress>
           </div>
         </div>
       </div>
@@ -43,104 +42,39 @@
         <h2>Skills</h2>
         <div class="info-body">
           <div class="skill">
-            <div class="skill-head"><img src="https://ddragon.leagueoflegends.com/cdn/6.24.1/img/passive/Aatrox_Passive.png" alt="Blood Well image">
-              <h3>Blood Well (passive)</h3>
+            <div class="skill-head"><img src="https://ddragon.leagueoflegends.com/cdn/7.11.1/img/passive/{{champion.passive.image}}" alt="{{champion.passive.name}} image">
+              <h3>{{champion.passive.name}} (passive)</h3>
             </div>
-            <p>When using an ability that costs Health, Aatrox stores the self-inflicted damage into the Blood Well. Upon taking fatal damage, Aatrox extracts the blood from the well and recovers it as Health over a brief duration. Additionally, Aatrox gains
-              1% Attack Speed for every 2% blood that is in the well.</p>
+            <p>{{champion.passive.sanitizedDescription}}</p>
           </div>
-          <div class="skill">
-            <div class="skill-head"><img src="https://ddragon.leagueoflegends.com/cdn/6.24.1/img/spell/AatroxQ.png" alt="Dark Flight image">
+          <div class="skill" *ngFor="let spell of champion.spells">
+            <div class="skill-head"><img src="https://ddragon.leagueoflegends.com/cdn/7.11.1/img/spell/{{spell.image}}" alt="{{spell.name}} image">
               <div>
-                <h3>Dark Flight</h3>
-                <p><b>Cost :</b> 0
+                <h3>{{spell.name}}</h3>
+                <p><b>Cost :</b> {{spell.costBurn}}
                 </p>
-                <p><b>Range :</b> 25000
+                <p><b>Range :</b> {{spell.rangeburn}}
                 </p>
-                <p><b>Cooldown :</b> 16/15/14/13/12
+                <p><b>Cooldown :</b> {{spell.cooldownBurn}}
                 </p>
               </div>
             </div>
-            <p>Aatrox takes flight and slams down at a targeted location, dealing damage and knocking up enemies at the center of impact.</p>
-          </div>
-          <div class="skill">
-            <div class="skill-head"><img src="https://ddragon.leagueoflegends.com/cdn/6.24.1/img/spell/AatroxW.png" alt="Blood Thirst / Blood Price image">
-              <div>
-                <h3>Blood Thirst / Blood Price</h3>
-                <p><b>Cost :</b> 0
-                </p>
-                <p><b>Range :</b> 1
-                </p>
-                <p><b>Cooldown :</b> 0.5
-                </p>
-              </div>
-            </div>
-            <p>While toggled on Aatrox deals bonus damage every third subsequent attack at the expense of his own Health. While toggled off Aatrox restores Health every third subsequent attack.</p>
-          </div>
-          <div class="skill">
-            <div class="skill-head"><img src="https://ddragon.leagueoflegends.com/cdn/6.24.1/img/spell/AatroxE.png" alt="Blades of Torment image">
-              <div>
-                <h3>Blades of Torment</h3>
-                <p><b>Cost :</b> 0
-                </p>
-                <p><b>Range :</b> 1000
-                </p>
-                <p><b>Cooldown :</b> 12/11/10/9/8
-                </p>
-              </div>
-            </div>
-            <p>Aatrox unleashes the power of his blade, dealing damage to enemies hit and slowing them.</p>
-          </div>
-          <div class="skill">
-            <div class="skill-head"><img src="https://ddragon.leagueoflegends.com/cdn/6.24.1/img/spell/AatroxR.png" alt="Massacre image">
-              <div>
-                <h3>Massacre</h3>
-                <p><b>Cost :</b> 0
-                </p>
-                <p><b>Range :</b> 550
-                </p>
-                <p><b>Cooldown :</b> 100/85/70
-                </p>
-              </div>
-            </div>
-            <p>Aatrox draws in the blood of his foes, damaging all nearby enemy champions around him and gaining increased Attack Speed and bonus Attack Range for a short duration.</p>
+            <p>{{spell.sanitizedDescription}}</p>
           </div>
         </div>
       </div>
       <div class="champion-info-category" id="skins">
         <h2>Skins</h2>
         <div class="skins info-body">
-          <div class="skin">
-            <a target="_blank" href="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg"><img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_0.jpg" alt="default image"></a>
-            <h3 class="skin-name">default</h3>
-          </div>
-          <div class="skin">
-            <a target="_blank" href="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_1.jpg"><img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_1.jpg" alt="Justicar Aatrox image"></a>
-            <h3 class="skin-name">Justicar Aatrox</h3>
-          </div>
-          <div class="skin">
-            <a target="_blank" href="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_2.jpg"><img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_2.jpg" alt="Mecha Aatrox image"></a>
-            <h3 class="skin-name">Mecha Aatrox</h3>
-          </div>
-          <div class="skin">
-            <a target="_blank" href="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_3.jpg"><img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Aatrox_3.jpg" alt="Sea Hunter Aatrox image"></a>
-            <h3 class="skin-name">Sea Hunter Aatrox</h3>
+          <div class="skin" *ngFor="let skin of champion.skins">
+            <a target="_blank" href="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{champion.key}}_{{skin .num}}.jpg"><img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/{{champion.key}}_{{skin .num}}.jpg" alt="{{skin.name}} image"></a>
+            <h3 class="skin-name">{{skin.name}}</h3>
           </div>
         </div>
       </div>
       <div class="champion-info-category" id="lore">
         <h2>Lore</h2>
-        <p class="info-body lore">Aatrox is a legendary warrior, one of only five that remain of an ancient race known as the Darkin. He wields his massive blade with grace and poise, slicing through legions in a style that is hypnotic to behold. With each foe felled, Aatrox's
-          seemingly living blade drinks in their blood, empowering him and fueling his brutal, elegant campaign of slaughter.<br><br>The earliest tale of Aatrox is as old as recorded history. It tells of a war between two great factions remembered only
-          as the Protectorate and the Magelords. Over time, the Magelords won a series of crushing victories, leaving them on the brink of obliterating their sworn enemy forever. On the day of their final confrontation, the Protectorate army found themselves
-          outnumbered, exhausted, and poorly equipped. They braced for inevitable defeat.<br><br>Just when all hope seemed lost, Aatrox appeared among the ranks of the Protectorate. With but a few words, he urged the soldiers to fight to the last before
-          throwing himself into battle. His presence inspired the desperate warriors. At first, they could only watch in awe as this unknown hero cleaved through their enemies, his body and blade moving in unison as if one being. Soon, the warriors found
-          themselves imbued with a potent thirst for battle. They followed Aatrox into the fray, each fighting with the furious strength of ten until they had won a most unlikely victory.<br><br>Aatrox vanished after that battle, but the Protectorate
-          army's newfound fury did not. Their surprising triumph led to many more until they were able to finally return home victorious. Their countrymen hailed them as heroes, but though they had saved their entire civilization from destruction, darkness
-          lingered in the mind of each warrior. Something within them had changed. Over time, their memories of battle faded, only to be replaced with a grim revelation: their acts of heroism were, in fact, brutal atrocities committed by their own hands.<br><br>Tales
-          like these appear among the myths of many cultures. If they are all to be believed, Aatrox's presence has changed the course of some of the most important wars in history. Though these stories remember him as a savior in dark times, Aatrox's
-          true legacy may be a world filled with conflict and strife.<br><br>''Some fight for honor, some fight for glory. It matters only that you fight.''<br>-- Aatrox<br>
-        </p>
+        <p class="info-body lore" [innerHTML]="champion.lore"></p>
       </div>
     </div>
   </div>
